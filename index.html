@@ -828,14 +828,27 @@
 
       <br>
 
-      <button class="btn btn-gold"
-              onclick="showVideoMessage()"
-              style="border:none;cursor:pointer;">
-        ▶ PLAY COMPANY PROFILE
-      </button>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:25px;">
 
-      <p id="video-message"
-         style="margin-top:20px;color:#e5b84b;"></p>
+  <div>
+    <h3 style="color:#e5b84b;margin-bottom:12px;">COMPANY PROFILE</h3>
+    <video controls playsinline preload="metadata"
+           style="width:100%;border-radius:12px;background:#000;">
+      <source src="VID-20260924-WA0001.mp4" type="video/mp4">
+      Your browser does not support HTML video.
+    </video>
+  </div>
+
+  <div>
+    <h3 style="color:#e5b84b;margin-bottom:12px;">MARITIME OPERATIONS PRESENTATION</h3>
+    <video controls playsinline preload="metadata"
+           style="width:100%;border-radius:12px;background:#000;">
+      <source src="VID-20260924-WA0000.mp4" type="video/mp4">
+      Your browser does not support HTML video.
+    </video>
+  </div>
+
+</div>
     </div>
   </section>
 
