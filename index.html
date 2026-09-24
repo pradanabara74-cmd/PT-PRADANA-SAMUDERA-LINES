@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PT Pradana Samudera Lines | Integrated Maritime Solutions</title>
+
+  <meta name="description"
+        content="PT Pradana Samudera Lines provides integrated maritime services, marine operations, fleet management, crew management, QHSSE and maritime intelligence solutions.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #041525;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    :root {
+      --navy: #041525;
+      --navy2: #082943;
+      --blue: #0d3c5d;
+      --gold: #e5b84b;
+      --teal: #22b7b5;
+      --white: #ffffff;
+      --muted: #b9c8d4;
+      --card: rgba(10, 43, 68, 0.82);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* NAVIGATION */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 5%;
+      background: rgba(3, 19, 34, 0.94);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(14px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+    }
+
+    .brand h1 {
+      font-size: 17px;
+      letter-spacing: 1.3px;
+    }
+
+    .brand small {
+      color: var(--muted);
+      letter-spacing: 2px;
+      font-size: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .portal-button {
+      padding: 12px 18px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #f3ca63, #d79b28);
+      color: #061728 !important;
+      font-weight: 800;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 120px 7% 70px;
+      background:
+        linear-gradient(90deg,
+          rgba(3,18,33,.97) 0%,
+          rgba(3,18,33,.87) 38%,
+          rgba(3,18,33,.43) 70%,
+          rgba(3,18,33,.72) 100%),
+        linear-gradient(135deg, #0c3b5a, #041525 65%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 75% 42%,
+          rgba(229,184,75,.24),
+          transparent 24%),
+        radial-gradient(circle at 72% 72%,
+          rgba(34,183,181,.15),
+          transparent 27%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      letter-spacing: 5px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .hero h2 {
+      font-size: clamp(45px, 7vw, 92px);
+      line-height: .94;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    .hero h2 span {
+      color: var(--gold);
+    }
+
+    .hero-tagline {
+      font-size: clamp(18px, 2vw, 27px);
+      color: #e7eef4;
+      max-width: 760px;
+      margin-bottom: 15px;
+    }
+
+    .hero-description {
+      color: var(--muted);
+      max-width: 650px;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 7px;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: .4px;
+      transition: .25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #f1c75d, #d99c2d);
+      color: #061728;
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.55);
+      color: white;
+    }
+
+    /* STATS */
+    .stats {
+      position: relative;
+      z-index: 5;
+      margin-top: -48px;
+      padding: 0 5%;
+    }
+
+    .stats-grid {
+      max-width: 1250px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      background: rgba(6,30,49,.96);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0,0,0,.3);
+    }
+
+    .stat {
+      padding: 25px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,.1);
+    }
+
+    .stat:last-child {
+      border-right: none;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--gold);
+      font-size: 31px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* SECTIONS */
+    section.content-section {
+      padding: 90px 6%;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 45px;
+    }
+
+    .section-heading .label {
+      color: var(--gold);
+      letter-spacing: 4px;
+      font-size: 11px;
+      font-weight: bold;
+    }
+
+    .section-heading h3 {
+      font-size: clamp(30px, 4vw, 48px);
+      margin: 8px 0 12px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    /* SERVICES */
+    .services {
+      background: #061b2d;
+    }
+
+    .cards {
+      max-width: 1250px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+    }
+
+    .card {
+      padding: 30px;
+      min-height: 235px;
+      border-radius: 12px;
+      background:
+        linear-gradient(145deg,
+          rgba(13,57,87,.92),
+          rgba(5,28,47,.98));
+      border: 1px solid rgba(255,255,255,.09);
+      box-shadow: 0 18px 40px rgba(0,0,0,.18);
+      transition: .25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(229,184,75,.55);
+    }
+
+    .card-icon {
+      font-size: 32px;
+      margin-bottom: 18px;
+    }
+
+    .card h4 {
+      margin-bottom: 10px;
+      font-size: 19px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-panel {
+      min-height: 390px;
+      border-radius: 15px;
+      background:
+        radial-gradient(circle at 60% 35%,
+          rgba(34,183,181,.32),
+          transparent 25%),
+        linear-gradient(145deg,#0b4666,#041525);
+      border: 1px solid rgba(255,255,255,.1);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .about-panel strong {
+      font-size: 65px;
+      color: var(--gold);
+    }
+
+    .about-text h3 {
+      font-size: 42px;
+      margin-bottom: 18px;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    /* INTELLIGENCE */
+    .intelligence {
+      background:
+        radial-gradient(circle at 50% 20%,
+          rgba(15,100,130,.25),
+          transparent 30%),
+        #031321;
+    }
+
+    .portal-box {
+      max-width: 1200px;
+      margin: auto;
+      padding: 48px;
+      border-radius: 16px;
+      background: linear-gradient(120deg,#0c3957,#071e32);
+      border: 1px solid rgba(229,184,75,.32);
+      display: grid;
+      grid-template-columns: 1.4fr .6fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .portal-box h3 {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .portal-box p {
+      color: var(--muted);
+    }
+
+    .portal-modules {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .module {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.09);
+      padding: 8px 11px;
+      border-radius: 30px;
+      font-size: 11px;
+    }
+
+    .portal-action {
+      text-align: center;
+    }
+
+    /* QHSSE */
+    .qhse-grid {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .qhse-item {
+      text-align: center;
+      padding: 30px;
+    }
+
+    .qhse-item strong {
+      display: block;
+      font-size: 40px;
+      color: var(--teal);
+      margin-bottom: 10px;
+    }
+
+    .qhse-item p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: #071e31;
+      text-align: center;
+    }
+
+    .contact-box {
+      max-width: 850px;
+      margin: auto;
+      padding: 50px 25px;
+    }
+
+    .contact-box h3 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 35px 6%;
+      background: #020d17;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+
+    .footer-inner {
+      max-width: 1250px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: center;
+      color: #91a7b7;
+      font-size: 12px;
+    }
+
+    .footer-company {
+      color: white;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 950px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 90vh;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .cards {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about-grid,
+      .portal-box {
+        grid-template-columns: 1fr;
+      }
+
+      .qhse-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        padding: 12px 4%;
+      }
+
+      .brand h1 {
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 110px 6% 70px;
+      }
+
+      .hero h2 {
+        font-size: 47px;
+      }
+
+      .stats {
+        margin-top: -25px;
+      }
+
+      .stats-grid,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,.08);
+      }
+
+      .portal-box {
+        padding: 30px 22px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <a class="brand" href="#home">
+      <div class="brand-mark">⚓</div>
+      <div>
+        <h1>PT PRADANA SAMUDERA LINES</h1>
+        <small>INTEGRATED MARITIME SOLUTIONS</small>
+      </div>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#home">HOME</a>
+      <a href="#about">ABOUT</a>
+      <a href="#services">SERVICES</a>
+      <a href="#fleet">FLEET</a>
+      <a href="#qhse">QHSSE</a>
+      <a href="#intelligence">INTELLIGENCE</a>
+      <a href="#contact">CONTACT</a>
+      <a class="portal-button" href="#intelligence">PORTAL OPERASIONAL</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main id="home" class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">INTEGRATED MARITIME SOLUTIONS</div>
+
+      <h2>
+        PT PRADANA<br>
+        <span>SAMUDERA LINES</span>
+      </h2>
+
+      <div class="hero-tagline">
+        Safer Seas. Stronger Operations. Smarter Maritime Future.
+      </div>
+
+      <p class="hero-description">
+        Your trusted partner in Marine Agency, Crew Management,
+        Fleet Operations, Chartering, QHSSE Compliance and
+        Maritime Digital Intelligence.
+      </p>
+
+      <div class="hero-buttons">
+        <a class="btn btn-gold" href="#company-video">
+          ▶ WATCH COMPANY PROFILE
+        </a>
+
+        <a class="btn btn-outline" href="#services">
+          EXPLORE OUR SERVICES →
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stats-grid">
+      <div class="stat">
+        <strong>21</strong>
+        <span>VESSELS IN DIGITAL ECOSYSTEM</span>
+      </div>
+
+      <div class="stat">
+        <strong>200+</strong>
+        <span>AI OPERATIONAL ASSISTANTS</span>
+      </div>
+
+      <div class="stat">
+        <strong>24/7</strong>
+        <span>MARITIME OPERATIONS MONITORING</span>
+      </div>
+
+      <div class="stat">
+        <strong>360°</strong>
+        <span>INTEGRATED MARITIME INTELLIGENCE</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="content-section">
+    <div class="about-grid">
+      <div class="about-panel">
+        <div>
+          <strong>PSL</strong>
+          <h3>Maritime Excellence</h3>
+          <p>People • Vessels • Ocean • Intelligence</p>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <div class="eyebrow">ABOUT OUR COMPANY</div>
+
+        <h3>Connecting Maritime Operations with Digital Intelligence</h3>
+
+        <p>
+          PT Pradana Samudera Lines is building an integrated maritime
+          ecosystem combining professional marine services with modern
+          operational intelligence.
+        </p>
+
+        <p>
+          Our approach connects people, vessels, safety, operational
+          performance and digital technology to support efficient,
+          reliable and responsible maritime operations.
+        </p>
+
+        <a class="btn btn-gold" href="#services">
+          DISCOVER OUR CAPABILITIES
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="content-section services">
+    <div class="section-heading">
+      <div class="label">OUR CAPABILITIES</div>
+      <h3>Integrated Maritime Services</h3>
+      <p>
+        One ecosystem connecting operational services, vessel performance,
+        safety and digital maritime intelligence.
+      </p>
+    </div>
+
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-icon">⚓</div>
+        <h4>Marine Agency</h4>
+        <p>
+          Port agency coordination, vessel support, port clearance,
+          husbandry services and marine logistics support.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">👥</div>
+        <h4>Crew Management</h4>
+        <p>
+          Crew recruitment, deployment coordination, documentation,
+          training support and certification monitoring.
+        </p>
+      </article>
+
+      <article id="fleet" class="card">
+        <div class="card-icon">🚢</div>
+        <h4>Fleet Management</h4>
+        <p>
+          Vessel operational monitoring, maintenance intelligence,
+          voyage performance and fleet reliability.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📑</div>
+        <h4>Chartering</h4>
+        <p>
+          Maritime commercial support for tanker, cargo, tug,
+          ocean tug, AHT and AHTS operations.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🛡️</div>
+        <h4>QHSSE & Compliance</h4>
+        <p>
+          Quality, health, safety, security and environmental
+          monitoring supporting responsible maritime operations.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📊</div>
+        <h4>Maritime Intelligence</h4>
+        <p>
+          Operational analytics, fuel efficiency, AI assistance
+          and workflow automation for better decisions.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- DIGITAL INTELLIGENCE -->
+  <section id="intelligence" class="content-section intelligence">
+    <div class="portal-box">
+      <div>
+        <div class="eyebrow">DIGITAL OPERATIONS ECOSYSTEM</div>
+
+        <h3>Marine Operations Intelligence Center</h3>
+
+        <p>
+          A unified digital environment designed to connect vessel
+          operations, fuel efficiency, QHSSE, reporting and intelligent
+          workflow automation.
+        </p>
+
+        <div class="portal-modules">
+          <span class="module">MARINE OPERATIONS</span>
+          <span class="module">VESSEL CONTROL</span>
+          <span class="module">FUEL EFFICIENCY</span>
+          <span class="module">QHSSE</span>
+          <span class="module">MAINTENANCE</span>
+          <span class="module">REPORTING</span>
+          <span class="module">AI INTELLIGENCE</span>
+          <span class="module">N8N AUTOMATION</span>
+        </div>
+      </div>
+
+      <div class="portal-action">
+        <div style="font-size:65px;margin-bottom:18px;">⚙️</div>
+
+        <a class="btn btn-gold"
+           href="https://marine-operational-n8n-intelligence-center-jzjdrcfteocokrff5g98.streamlit.app"
+           target="_blank"
+           rel="noopener noreferrer">
+          ENTER OPERATIONS PORTAL →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QHSSE -->
+  <section id="qhse" class="content-section">
+    <div class="section-heading">
+      <div class="label">SAFETY & RESPONSIBILITY</div>
+      <h3>QHSSE Commitment</h3>
+      <p>
+        Safety, operational reliability and responsible maritime
+        performance are integrated into our digital ecosystem.
+      </p>
+    </div>
+
+    <div class="qhse-grid">
+      <div class="qhse-item">
+        <strong>01</strong>
+        <h4>Safety First</h4>
+        <p>
+          Supporting proactive safety management and operational awareness.
+        </p>
+      </div>
+
+      <div class="qhse-item">
+        <strong>02</strong>
+        <h4>Operational Reliability</h4>
+        <p>
+          Connecting vessel information with performance and maintenance.
+        </p>
+      </div>
+
+      <div class="qhse-item">
+        <strong>03</strong>
+        <h4>Sustainable Future</h4>
+        <p>
+          Fuel efficiency intelligence supports more efficient operations.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section id="company-video"
+           class="content-section services">
+    <div class="section-heading">
+      <div class="label">COMPANY PRESENTATION</div>
+      <h3>Experience Our Maritime Vision</h3>
+      <p>
+        Our cinematic company profile video and professional audio
+        presentation will be integrated into this section.
+      </p>
+
+      <br>
+
+      <button class="btn btn-gold"
+              onclick="showVideoMessage()"
+              style="border:none;cursor:pointer;">
+        ▶ PLAY COMPANY PROFILE
+      </button>
+
+      <p id="video-message"
+         style="margin-top:20px;color:#e5b84b;"></p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="content-section contact">
+    <div class="contact-box">
+      <div class="eyebrow">LET'S WORK TOGETHER</div>
+
+      <h3>Ready to Support Your Maritime Operations</h3>
+
+      <p>
+        Marine Agency • Crew Management • Fleet Operations •
+        QHSSE • Fuel Efficiency • Maritime Intelligence
+      </p>
+
+      <a class="btn btn-gold"
+         href="mailto:info@pradanasamuderalines.com">
+        CONTACT OUR TEAM
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-company">
+          PT PRADANA SAMUDERA LINES
+        </div>
+        <div>
+          Integrated Maritime Services & Digital Intelligence
+        </div>
+      </div>
+
+      <div>
+        Batam • Indonesia
+      </div>
+
+      <div>
+        © <span id="year"></span> PT Pradana Samudera Lines.
+        All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    function showVideoMessage() {
+      document.getElementById("video-message").textContent =
+        "Premium Company Profile Video & Audio module is ready for the next integration stage.";
+    }
+  </script>
+
+</body>
+</html>
